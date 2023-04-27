@@ -1,1 +1,116 @@
+C프로그래밍 3주차 수업
 
+20230316_1.c
+#include <stdio.h>
+
+int main(void) //void는 전달할 값이 없다(매개변수가 없다) 라는 뜻. return 굳이 필요 X
+{
+    printf("hello world");
+}
+
+20230316_2.c
+#include <stdio.h>
+
+int main()
+{
+    int x;
+    x = 3.99;
+    printf("x : %d\n", x);
+
+    float y;
+    y = 3.99;
+    printf("y : %d\n" , y);
+}
+
+20230316_3.c
+#define _CRT_SECURE_NO_WARNINGS //scanf() 오류가 발생하면 소스 파일의 처음에서 _CRT_SECURE_NO_WARNINGS를 정의
+#include <stdio.h>
+
+int main()
+{
+    int x;
+    int y;
+
+    scanf("%d", &x);
+   
+    y = x*x-5*x+6;
+    
+    printf("%d", y);
+}
+
+20230316_4.c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+    int x, y;
+    int sum, diff, mul, div;
+
+    x = 20;
+    y = 10;
+
+    sum = x + y;
+    diff = x - y;
+    mul = x * y;
+    div = x / y;
+
+    printf("두 수의 합 : %d\n", sum);
+    printf("두 수의 차 : %d\n", diff);
+    printf("두 수의 곱 : %d\n", mul);
+    printf("두 수의 몫 : %d\n", div);
+
+    return 0;
+
+}
+
+20230316_5.c
+#include <stdio.h>
+#include <limits.h>
+
+int main(void)
+{
+    short s_money = SHRT_MAX; //최대값으로 초기화한다. 32767
+    unsigned short u_money = USHRT_MAX; // 최대값으로 초기화한다. 65535
+
+    s_money = s_money +1;
+    printf("s_money = %d\n", s_money);
+
+    u_money = u_money +1;
+    printf("u_money = %d\n", u_money);
+    return 0;
+}
+
+20230316_6.c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#define TAX_RATE 0.2
+
+int main(void)
+{
+    const int MONTHS = 12;
+    int m_salary, y_salary;
+
+    printf("월급을 입력하시오: ");
+    scanf("%d", &m_salary);
+    y_salary = m_salary * MONTHS;
+    printf("연봉은 %d입니다.\n", y_salary);
+    printf("세금은 %f입니다.\n", y_salary * TAX_RATE);
+
+    return 0;
+}
+
+miniproject
+#include <stdio.h>
+
+int main()
+{
+    double x, y, z;
+    x = 300000.000000;
+    y = 149600000.000000;
+    printf("빛의 속도는 %lfkm/s\n", x);
+    printf("태양과 지구와의 거리 %lfkm\n", y);
+    z = y / x;
+    printf("도달 시간은 %lf초", z);
+    return 0;
+}
